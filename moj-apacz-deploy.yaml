@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: moj-apacz
-  annotations:
-    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
 spec:
   replicas: 1
   selector:
@@ -34,6 +32,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: moj-apacz
+  annotations:
+    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
 spec:
   type: LoadBalancer
   ports:
