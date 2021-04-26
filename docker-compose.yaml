@@ -31,7 +31,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name:moj-apacz
+  name: moj-apacz
 spec:
   type: LoadBalancer
   ports:
