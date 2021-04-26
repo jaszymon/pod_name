@@ -17,8 +17,6 @@ spec:
       labels:
         app: moj-apacz
     spec:
-      nodeSelector:
-        "beta.kubernetes.io/os": linux
       containers:
       - name: moj-apacz
         image: https://hub.docker.com/repository/docker/szymonjak/moj_apacz:firsttry
