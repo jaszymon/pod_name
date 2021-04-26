@@ -1,9 +1,42 @@
-version: '3'
-services:
-
-  moj-apacz:
-    build: ./public-html
-    image: https://hub.docker.com/repository/docker/szymonjak/moj_apacz:firsttry
-    container_name: moj-apacz
-    ports:
-        - "8080:80"
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: moj-apacz
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: moj-apacz
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5 
+  template:
+    metadata:
+      labels:
+        app: moj-apacz
+    spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
+      containers:
+      - name: moj-apacz
+        image: https://hub.docker.com/repository/docker/szymonjak/moj_apacz:firsttry
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: 250m
+          limits:
+            cpu: 500m
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name:moj-apacz
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: moj-apacz
