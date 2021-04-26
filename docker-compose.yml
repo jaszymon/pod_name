@@ -1,0 +1,9 @@
+version: '3'
+services:
+
+  moj-apacz:
+    build: ./public-html
+    image: https://hub.docker.com/repository/docker/szymonjak/moj_apacz:firsttry
+    container_name: moj-apacz
+    ports:
+        - "8080:80"
