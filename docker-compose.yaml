@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: moj-apacz
-        image: https://hub.docker.com/repository/docker/szymonjak/moj_apacz:firsttry
+        image: szymonjak/moj_apacz:firsttry
         ports:
         - containerPort: 80
         resources:
