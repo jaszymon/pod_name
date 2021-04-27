@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: moj-apacz
-        image: szymonjak/moj_apacz:secondtry
+        image: acrnginxfree001.azurecr.io/moj_apacz:latest
         ports:
         - containerPort: 80
         resources:

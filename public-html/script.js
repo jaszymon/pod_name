@@ -1,6 +1,6 @@
 let request = new XMLHttpRequest();
 
-request.open("GET","http://10.0.1.4:8081/api/v1/pods");
+request.open("GET","http://20.56.237.3:8081/api/v1/pods");
 request.send();
 request.onload = () => {
 	document.write(request)
