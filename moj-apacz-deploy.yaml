@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: moj-apacz
-        image: szymonjak/moj_apacz:firsttry
+        image: szymonjak/moj_apacz:secondtry
         ports:
         - containerPort: 80
         resources:
